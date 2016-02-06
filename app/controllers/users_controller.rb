@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+
   def new
     @user = User.new
   end
@@ -12,7 +13,6 @@ class UsersController < ApplicationController
     if @user.save
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
-      # Handle a successful save.
     else
       render 'new'
     end
